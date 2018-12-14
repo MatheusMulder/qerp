@@ -1,24 +1,18 @@
 spring:
-# Database
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/qerp?createDatabaseIfNotExist=true
-    username: postgres
-    password: root
-# JPA properties
-  jpa:
-    hibernate:
-        ddl-auto: create-drop
-        show-sql: false
-        database: POSTGRESQL
-        database-platform: hibernate.dialect.PostgreSQLDialect	
-        open-in-view: true
-        generate-ddl: true
-    properties:
-     hibernate:
-        temp:
-          use_jdbc_metadata_defaults: false
-  security:
+    datasource:
+        url: jdbc:mysql://localhost:3306/spring_social?useSSL=false&useTimezone=true&serverTimezone=UTC
+        username: root
+        password: root
+
+    jpa:
+        show-sql: true
+        hibernate:
+            ddl-auto: create-drop
+            naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    security:
       oauth2:
         client:
           registration:

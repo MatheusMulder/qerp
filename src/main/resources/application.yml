@@ -62,4 +62,4 @@ app:
       - myandroidapp://oauth2/redirect
       - myiosapp://oauth2/redirect  
 server:
-    port: $PORT
+    port: 9090
